@@ -59,7 +59,7 @@ function saveAllStorage(){
 }
 
 function clearAllTodos(e){  
-    if (confirm("Tümünü silmek istediğine emin misin?")){
+    if (confirm("Are you sure about that?")){
         while(todoList.firstElementChild != null){
             todoList.removeChild(todoList.firstElementChild);
         }
@@ -86,7 +86,7 @@ function deleteTodo(e){
     if(e.target.className === "fas fa-trash-alt"){
         e.target.parentElement.parentElement.remove();
         deleteTodoFromStorage(e.target.parentElement.parentElement.textContent);
-        showAlert("success","Todo başarıyla silindi..");
+        showAlert("success","Todo successfully removed..");
     }
 }
 function deleteTodoFromStorage(deletetodo){
@@ -122,7 +122,7 @@ function addTodo(e){
         if(check.checked == true){
         
             if (newTodo === ""){
-                showAlert("danger","Lütfen bir todo girin...");
+                showAlert("danger","Please enter a Todo...");
             }
             else{
                 if(todos.includes(newTodo)){
@@ -140,7 +140,7 @@ function addTodo(e){
         }
         else{
             if (newTodo === ""){
-                showAlert("danger","Lütfen bir todo girin...");
+                showAlert("danger","Please enter a Todo...");
             }
             else{
                 for(var j = 0; j < todoList.childElementCount; j++){
@@ -150,7 +150,7 @@ function addTodo(e){
                     }
                 }
                 addTodoToUI(newTodo);
-                showAlert("success","Todo başarıyla eklendi...");
+                showAlert("success","Todo successfully added...");
                 
             }
         }
