@@ -87,7 +87,9 @@ function deleteTodo(e){
         e.target.parentElement.parentElement.remove();
         deleteTodoFromStorage(e.target.parentElement.parentElement.textContent);
         showAlert("success","Todo successfully removed..");
+        tooDoList();
     }
+    
 }
 function deleteTodoFromStorage(deletetodo){
     let todos = getTodosFromStorage();
